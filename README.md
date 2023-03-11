@@ -1,8 +1,8 @@
 # slou
 "Smooll" LOgging Utility (pronounced `slew` or `slow`).
 
-[![License](https://img.shields.io/static/v1?label=License&message=MIT&color=informational)](https://www.github.com/reallySmooll/slou/blob/master/README.md)
-[![Version](https://img.shields.io/static/v1?label=Version&message=v1.0.0&color=informational)](https://www.github.com/reallySmooll/slou/blob/master/CHANGELOG.md)
+[![License](https://img.shields.io/static/v1?label=License&message=MIT&color=informational&style=flat)](https://www.github.com/reallySmooll/slou/blob/master/README.md)
+[![Version](https://img.shields.io/static/v1?label=Version&message=v1.0.0&color=informational&style=flat)](https://www.github.com/reallySmooll/slou/blob/master/CHANGELOG.md)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/30c92ecea05f43a98c67c947f61bbcd3)](https://www.codacy.com/gh/reallySmooll/slou/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=reallySmooll/slou&amp;utm_campaign=Badge_Grade)
 
 `slou` is a simple logging library that's easy to use and fast. It has moderate configuration that can be used in both small and big projects.
