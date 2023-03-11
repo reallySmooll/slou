@@ -4,8 +4,10 @@
 
 #include "include/slou/slou.hpp"
 
+#include <ctime>
 #include <iostream>
 #include <filesystem>
+#include <sstream>
 #include <stdexcept>
 
 namespace slou
@@ -79,13 +81,19 @@ namespace slou
      */
     std::string Logger::CurrentDateAndTime(const char* format)
     {
-        time_t now = time(0);
-        struct tm    tstruct;
-        char         buf[80];
-        tstruct    = *localtime(&now);
+        auto now = std::chrono::system_clock::now();
+        std::time_t time_now = std::chrono::system_clock::to_time_t(now);
+        std::tm tm_now;
 
-        strftime(buf, sizeof(buf), format, &tstruct);
+#ifdef _WIN32
+        localtime_s(&tm_now, &time_now);
+#else
+        localtime_r(&time_now, &tm_now);
+#endif
 
-        return buf;
+        std::stringstream ss;
+        ss << std::put_time(&tm_now, format);
+
+        return ss.str();
     }
 }

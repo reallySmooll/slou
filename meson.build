@@ -14,6 +14,8 @@ shlib = shared_library('slou', shlib_src,
   gnu_symbol_visibility : 'hidden',
 )
 
+#exe = executable('sandbox', 'sandbox.cpp', link_with : shlib)
+
 # Make this library usable as a Meson subproject.
 slou_dep = declare_dependency(
   include_directories: include_directories('./include/slou/'),
