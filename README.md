@@ -9,9 +9,9 @@ The project uses the Meson build system which means that you can install your pr
 ### Dependencies
 The dependencies `slou` uses are basic dependencies used by any project:
 
--  Meson
--  git
--  Doxygen (optional, if you want to help with documentation, install it)
+-    Meson
+-    git
+-    Doxygen (optional, if you want to help with documentation, install it)
 
 ### Building
 Building the project is as easy as 1-2-3. The following commands are directed at Linux users but it should work for any operating system as Meson will generate the necessary files for building the project.
