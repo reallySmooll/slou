@@ -1019,7 +1019,7 @@ RECURSIVE              = YES
 
 EXCLUDE                = build/ \
                          .cache/ \
-                         sandbox/ \
+                         sandbox.cpp \
                          meson.build \
                          slou.log \
                          submodules/
