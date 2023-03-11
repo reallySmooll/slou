@@ -28,7 +28,7 @@ namespace slou
     class SLOU_PUBLIC Logger
     {
         public:
-            Logger(std::string projectName="slou", const char* format="%X", bool shouldLogToFile=true, bool shouldLogToScreen=false, std::string logFilename="slou.log");
+            explicit Logger(std::string projectName="slou", const char* format="%X", bool shouldLogToFile=true, bool shouldLogToScreen=false, std::string logFilename="slou.log");
             ~Logger();
 
             void Log(std::string level, std::string message);
