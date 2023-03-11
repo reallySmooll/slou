@@ -1,4 +1,7 @@
 # slou
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5b791702e9514ab4b30edc34b30f0991)](https://app.codacy.com/gh/reallySmooll/slou?utm_source=github.com&utm_medium=referral&utm_content=reallySmooll/slou&utm_campaign=Badge_Grade_Settings)
+
 "Smooll" LOgging Utility (pronounced `slew` or `slow`).
 
 `slou` is a simple logging library that's easy to use and fast. It has moderate configuration that can be used in both small and big projects.
