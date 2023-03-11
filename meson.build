@@ -14,10 +14,6 @@ shlib = shared_library('slou', shlib_src,
   gnu_symbol_visibility : 'hidden',
 )
 
-# Uncomment these two lines and create a "sandbox.cpp" file in the "sandbox" directory (also create it) to make a sandbox for testing.
-#sandbox_exe = executable('sandbox', 'sandbox/sandbox.cpp',
-#  link_with : shlib)
-
 # Make this library usable as a Meson subproject.
 slou_dep = declare_dependency(
   include_directories: include_directories('./include/slou/'),
