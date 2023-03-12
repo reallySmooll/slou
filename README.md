@@ -61,7 +61,7 @@ If you'd like to contribute, please refer to the [contributing guide](https://ww
 
 Here are some contributions:
 
-- Seeing if you can build the library on Windows - Marcel Zdziechowicz (@marcel-zdziechowicz)
+- Seeing if you can build the library on Windows - Marcel Zdziechowicz ([@marcel-zdziechowicz](https://www.github.com/marcel-zdziechowicz))
 
 ## Code of Conduct
 If you'd like to see it, check out the [CODE_OF_CONDUCT.md](https://www.github.com/reallySmooll/slou/blob/master/CODE_OF_CONDUCT.md).
