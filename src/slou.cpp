@@ -89,7 +89,7 @@ namespace slou
         localtime_s(&tm_now, &time_now);
 #else
         localtime_r(&time_now, &tm_now);
-#endif
+#endif // _WIN32
 
         std::stringstream ss;
         ss << std::put_time(&tm_now, format);
