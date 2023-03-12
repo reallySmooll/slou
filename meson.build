@@ -1,5 +1,5 @@
 project('slou', 'cpp',
-  version : '1.0.0',
+  version : '1.0.1',
   default_options : ['warning_level=3', 'cpp_std=c++20'])
 
 # These arguments are only used to build the shared library
@@ -14,7 +14,8 @@ shlib = shared_library('slou', shlib_src,
   gnu_symbol_visibility : 'hidden',
 )
 
-#exe = executable('sandbox', 'sandbox.cpp', link_with : shlib)
+# This executable is used for library testing purposes
+# sandbox = executable('sandbox', 'src/sandbox.cpp', link_with : shlib)
 
 # Make this library usable as a Meson subproject.
 slou_dep = declare_dependency(
@@ -23,7 +24,7 @@ slou_dep = declare_dependency(
 
 # Make this library usable from the system's
 # package manager.
-install_headers('include/slou/slou.hpp', subdir : 'slou')
+install_headers('./include/slou/slou.hpp', subdir : 'slou')
 
 pkg_mod = import('pkgconfig')
 pkg_mod.generate(
@@ -32,5 +33,5 @@ pkg_mod.generate(
   description : '"Smooll" LOgging Utility.',
   subdirs : 'slou',
   libraries : shlib,
-  version : '1.0.0',
+  version : meson.project_version(),
 )
