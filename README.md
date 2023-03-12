@@ -1,11 +1,11 @@
 # slou
-"Smooll" LOgging Utility (pronounced `slew` or `slow`).
-
 [![License](https://img.shields.io/static/v1?label=License&message=MIT&color=informational)](https://www.github.com/reallySmooll/slou/blob/master/LICENSE)
 [![Version](https://img.shields.io/static/v1?label=Version&message=v1.0.0&color=informational)](https://www.github.com/reallySmooll/slou/blob/master/CHANGELOG.md)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/30c92ecea05f43a98c67c947f61bbcd3)](https://www.codacy.com/gh/reallySmooll/slou/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=reallySmooll/slou&amp;utm_campaign=Badge_Grade)
 
-`slou` is a simple logging library that's easy to use and fast. It has moderate configuration that can be used in both small and big projects.
+"Smooll" LOgging Utility (pronounced `slew` or `slow`).
+
+`slou` is a simple logging library made in C++ that's easy to use and fast. It has moderate configuration that can be used in both small and big projects.
 
 ## Installation
 The project uses the Meson build system which means that you can install your project on all platforms that are supported by Meson.
@@ -55,3 +55,13 @@ int main()
 And that is the default setup for `slou`. The logs will be saved to a file called (by default) `slou.log` but the logs will not be displayed on the screen.
 
 You can obviously change this and customize it to your liking. If you'd like to see more you can check out the documentation [here](https://reallysmooll.github.io/slou-docs).
+
+## Contributing
+If you'd like to contribute, please refer to the [contributing guide](https://www.github.com/reallySmooll/slou/blob/master/CONTRIBUTING.md).
+
+Here are some contributions:
+
+- Seeing if you can build the library on Windows - Marcel Zdziechowicz (@marcel-zdziechowicz)
+
+## Code of Conduct
+If you'd like to see it, check out the [CODE_OF_CONDUCT.md](https://www.github.com/reallySmooll/slou/blob/master/CODE_OF_CONDUCT.md).
