@@ -19,6 +19,7 @@
 slou uses the Meson build system which means that you can install your project on all platforms that are supported by Meson.
 
 Linux users can download a binary of the library on the [Releases](https://www.github.com/reallySmooll/slou/releases) page.
+Windows users can now also download a binary of the library on the [Releases](https://www.github.com/reallySmooll/slou/releases) page.
 
 ### Dependencies
 - Meson
