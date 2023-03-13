@@ -139,6 +139,27 @@ slou uses `Meson` and `Ninja` to build the project so make sure you have that. Y
 #### Code editor
 You can use any code editor for development, there aren't any requirements.
 
+#### Building
+If you use Linux for compilation please compile for Windows as well. In the root directory there's a `win64.crossfile` that you can use to compile for both Linux and Windows.
+
+To compile execute these commands:
+
+```bash
+$ mkdir build/
+$ cd build/
+$ meson setup --prefix /usr build-linux-x86_64/ ../
+$ meson setup --cross-file ../win64.crossfile build-windows-x86_64/ ../
+```
+
+And then to compile, while in the root directory:
+
+```bash
+$ meson compile -C build/build-linux-x86_64/
+$ meson compile -C build/build-windows-x86_64/
+```
+
+If you use Windows, for the time being you can only compile for Windows, which is good because the lead developer does not have a Windows computer and will not for some time. :)
+
 ### Improving The Documentation
 As slou uses `Doxygen` for documentation, you really don't need to do much except for installing it and documenting the code properly.
 
