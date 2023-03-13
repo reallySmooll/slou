@@ -13,7 +13,7 @@ The project uses the Meson build system which means that you can install your pr
 Linux users can download a binary of the library on the [Releases](https://www.github.com/reallySmooll/slou/releases) page.
 
 ### Dependencies
-The dependencies `slou` uses are basic dependencies used by any project:
+The dependencies slou uses are basic dependencies used by any project:
 
 - Meson
 - git
@@ -37,7 +37,7 @@ $ sudo meson install -C build
 ```
 
 ## Quickstart
-`slou` was designed to be very easy to use. And as it is a small library it doesn't require anymore setup than this:
+slou was designed to be very easy to use. And as it is a small library it doesn't require anymore setup than this:
 
 ```cpp
 #include <slou/slou.hpp>
@@ -52,7 +52,7 @@ int main()
 }
 ```
 
-And that is the default setup for `slou`. The logs will be saved to a file called (by default) `slou.log` but the logs will not be displayed on the screen.
+And that is the default setup for slou. The logs will be saved to a file called (by default) `slou.log` but the logs will not be displayed on the screen.
 
 You can obviously change this and customize it to your liking. If you'd like to see more you can check out the documentation [here](https://reallysmooll.github.io/slou-docs).
 
