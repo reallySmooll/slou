@@ -1,7 +1,15 @@
 # slou
-[![License](https://img.shields.io/static/v1?label=License&message=MIT&color=informational)](https://www.github.com/reallySmooll/slou/blob/master/LICENSE)
-[![Version](https://img.shields.io/static/v1?label=Version&message=v1.0.0&color=informational)](https://www.github.com/reallySmooll/slou/blob/master/CHANGELOG.md)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/30c92ecea05f43a98c67c947f61bbcd3)](https://www.codacy.com/gh/reallySmooll/slou/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=reallySmooll/slou&amp;utm_campaign=Badge_Grade)
+<p align="center">
+    <a href="https://www.github.com/reallySmooll/slou/blob/master/LICENSE" alt="License">
+        <img src="https://img.shields.io/static/v1?label=License&message=MIT&color=informational">
+    </a>
+    <a href="https://www.github.com/reallySmooll/slou/blob/master/CHANGELOG.md" alt="Version">
+        <img src="https://img.shields.io/static/v1?label=Version&message=v1.0.1&color=informational">
+    </a>
+    <a href="https://www.codacy.com/gh/reallySmooll/slou/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=reallySmooll/slou&amp;utm_campaign=Badge_Grade" alt="Codacy Badge">
+        <img src="https://app.codacy.com/project/badge/Grade/30c92ecea05f43a98c67c947f61bbcd3">
+    </a>
+</p>
 
 "Smooll" LOgging Utility (pronounced `slew`).
 
