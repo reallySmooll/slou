@@ -1,5 +1,5 @@
 project('slou', 'cpp',
-  version : '1.0.1',
+  version : '1.1.0',
   default_options : ['warning_level=3', 'cpp_std=c++20'])
 
 # These arguments are only used to build the shared library
@@ -19,12 +19,12 @@ shlib = shared_library('slou', shlib_src,
 
 # Make this library usable as a Meson subproject.
 slou_dep = declare_dependency(
-  include_directories: include_directories('./include/slou/'),
+  include_directories: include_directories('./src/'),
   link_with : shlib)
 
 # Make this library usable from the system's
 # package manager.
-install_headers('./include/slou/slou.hpp', subdir : 'slou')
+install_headers('./src/slou.hpp', subdir : 'slou')
 
 pkg_mod = import('pkgconfig')
 pkg_mod.generate(
