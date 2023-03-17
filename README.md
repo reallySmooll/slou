@@ -4,7 +4,7 @@
         <img src="https://img.shields.io/static/v1?label=License&message=MIT&color=informational">
     </a>
     <a href="https://www.github.com/reallySmooll/slou/blob/master/CHANGELOG.md" alt="Version">
-        <img src="https://img.shields.io/static/v1?label=Version&message=v1.0.1&color=informational">
+        <img src="https://img.shields.io/static/v1?label=Version&message=v1.1.0&color=informational">
     </a>
     <a href="https://www.codacy.com/gh/reallySmooll/slou/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=reallySmooll/slou&amp;utm_campaign=Badge_Grade" alt="Codacy Badge">
         <img src="https://app.codacy.com/project/badge/Grade/30c92ecea05f43a98c67c947f61bbcd3">
@@ -62,6 +62,55 @@ int main()
 That is the default setup for slou. The logs will be saved to a file called (by default) `slou.log` but the logs will not be displayed on the screen.
 
 You can obviously change this and customize it to your liking. If you'd like to see more you can check out the documentation [here](https://reallysmooll.github.io/slou-docs).
+
+## Custom formatting
+As of version `1.1.0`, slou supports custom formatting similar in use to the Python `logging` library.
+
+There are four variables you can use to customize your log format:
+
+- `{projectName}` - Name of your project
+- `{level}` - Severity level
+- `{time}` - Date and/or time
+- `{message}` - Your log message
+
+### Usage
+To customize your format, you need to add it as a constructor argument:
+
+```cpp
+#include <slou/slou.hpp>
+
+int main()
+{
+    // You can create a new variable with your custom format, or pass it directly to the constructor.
+    std::string format = "{projectName} - [{level}] ({time}): {message}";
+
+    slou::Logger logger("slou", "%X", true, false, "slou.log", format);
+
+    logger.Log(logger.INFO, "Hello, world!");
+
+    return 0;
+}
+```
+
+The output:
+
+```
+slou - [INFO] (22:56:40): Hello, world!
+```
+
+You can obviously change the formatting to exclude some info from the log like for example the time, which would output:
+
+```
+slou - [INFO]: Hello, world!
+```
+
+The `format` variable would look something like this:
+
+```cpp
+std::string format = "{projectName} - [{level}]: {message}";
+```
+
+And that's all you need to know to format your logs however you like. Happy formatting! :)
 
 ## Contributing
 If you'd like to contribute, please refer to the [contributing guide](https://www.github.com/reallySmooll/slou/blob/master/CONTRIBUTING.md).
