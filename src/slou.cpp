@@ -23,8 +23,8 @@ namespace slou
      *
      * \param projectName constant reference to a string representing the project name. (defaults to "slou")
      * \param timeFormat constant character pointer representing the date and/or time format. (defaults to "%X" which is the localized time representation, meaning the current hour, minute and second, locale dependent)
-     * \param shouldLogToFile boolean representing the need to log to a file. (defaults to "true")
-     * \param shouldLogToScreen boolean representing the need to log to the screen. (defaults to "false")
+     * \param logToFile boolean representing the need to log to a file. (defaults to "true")
+     * \param logToScreen boolean representing the need to log to the screen. (defaults to "false")
      * \param logFilename constant reference to a string representing the path and name of the log file. (defaults to "slou.log")
      * \param format constant reference to a string representing the custom log format. (defaults to "{projectName} - [{level}] ({time}): {message}")
      */
