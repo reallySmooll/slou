@@ -28,12 +28,10 @@ namespace slou
     class SLOU_PUBLIC Logger
     {
         public:
-            explicit Logger(std::string projectName="slou", const char* timeFormat="%X", bool shouldLogToFile=true, bool shouldLogToScreen=false, std::string logFilename="slou.log", std::string format="{projectName} - [{level}] ({time}): {message}");
+            explicit Logger(const std::string& projectName="slou", const char* timeFormat="%X", bool logToFile=true, bool logToScreen=false, const std::string& logFilename="slou.log", const std::string& format="{projectName} - [{level}] ({time}): {message}");
             ~Logger();
 
-            void Log(std::string level, std::string message);
-            std::string CurrentDateAndTime(const char* timeFormat);
-            std::string Format(std::string format);
+            void Log(const std::string& level, const std::string& message);
 
             const std::string SUCCESS  = "SUCCESS";  ///< Success level indicates that an operation was successful.
             const std::string INFO     = "INFO";     ///< Info level displays basic information.
@@ -45,11 +43,16 @@ namespace slou
 
             const char* timeFormat;                  ///< Date and/or time format. (defaults to "%X", which means the current hour, minute and second)
 
-            bool shouldLogToFile;                    ///< Should the logger put logs to a file. (defaults to "true")
-            bool shouldLogToScreen;                  ///< Should the logger display logs to a screen. (defaults to "false")
+            bool logToFile;                          ///< Should the logger put logs to a file. (defaults to "true")
+            bool logToScreen;                        ///< Should the logger display logs to a screen. (defaults to "false")
 
             std::string logFilename;                 ///< Path and name of the log file. (defaults to "slou.log")
+
+            bool colorTerminalOutput = true;         ///< Should logs in the terminal be colored. (defaults to "true")
         private:
+            std::string CurrentDateAndTime(const char* timeFormat);
+            std::string Format(std::string format);
+
             const std::string RESET    = "\033[0m";  ///< Reset color resets all of the colors to the terminal default.
             const std::string RED      = "\033[31m"; ///< Red color paints output red. Used in critical errors.
             const std::string GREEN    = "\033[32m"; ///< Green color paints output green. Used when something is successful.
