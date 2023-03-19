@@ -1,5 +1,5 @@
 project('slou', 'cpp',
-  version : '1.1.0',
+  version : '1.1.1',
   default_options : ['warning_level=3', 'cpp_std=c++20'])
 
 # These arguments are only used to build the shared library
@@ -15,7 +15,7 @@ shlib = shared_library('slou', shlib_src,
 )
 
 # This executable is used for library testing purposes
-# sandbox = executable('sandbox', 'src/sandbox.cpp', link_with : shlib)
+#sandbox = executable('sandbox', 'src/sandbox.cpp', link_with : shlib)
 
 # Make this library usable as a Meson subproject.
 slou_dep = declare_dependency(
