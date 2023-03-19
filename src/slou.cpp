@@ -19,20 +19,20 @@ namespace slou
      *
      * The constructor checks if the log file exists and if it does, the constructor removes the file.
      *
-     * For more ways of formatting date and time, check out: https://cplusplus.com/reference/ctime/strftime/
+     * For more ways of formatting date and time, check out: https://en.cppreference.com/w/cpp/io/manip/put_time
      *
-     * \param projectName string representing the project name. (defaults to "slou")
-     * \param timeFormat string representing the date and/or time format. (defaults to "%X" which means the current hour, minute and second)
+     * \param projectName constant reference to a string representing the project name. (defaults to "slou")
+     * \param timeFormat constant character pointer representing the date and/or time format. (defaults to "%X" which is the localized time representation, meaning the current hour, minute and second, locale dependent)
      * \param shouldLogToFile boolean representing the need to log to a file. (defaults to "true")
      * \param shouldLogToScreen boolean representing the need to log to the screen. (defaults to "false")
-     * \param logFilename string representing the path and name of the log file. (defaults to "slou.log")
-     * \param format string representing the custom log format. (defaults to "{projectName} - [{level}] ({time}): {message}")
+     * \param logFilename constant reference to a string representing the path and name of the log file. (defaults to "slou.log")
+     * \param format constant reference to a string representing the custom log format. (defaults to "{projectName} - [{level}] ({time}): {message}")
      */
-    Logger::Logger(std::string projectName, const char* timeFormat, bool shouldLogToFile, bool shouldLogToScreen, std::string logFilename, std::string format)
+    Logger::Logger(const std::string& projectName, const char* timeFormat, bool logToFile, bool logToScreen, const std::string& logFilename,const std::string& format)
         : projectName(projectName),
           timeFormat(timeFormat),
-          shouldLogToFile(shouldLogToFile),
-          shouldLogToScreen(shouldLogToScreen),
+          logToFile(logToFile),
+          logToScreen(logToScreen),
           logFilename(logFilename),
           _format(format)
     {
@@ -48,15 +48,15 @@ namespace slou
 
     /** \brief Function logs the passed in message variable to the terminal and/or a file.
      *
-     * \param level string representing the level of severity of the log message.
-     * \param message string representing the message that is supposed to be logged.
+     * \param level constant reference to a string representing the level of severity of the log message.
+     * \param message constant reference to a string representing the message that is supposed to be logged.
      */
-    void Logger::Log(std::string level, std::string message)
+    void Logger::Log(const std::string& level, const std::string& message)
     {
         _level   = level;
         _message = message;
 
-        if (shouldLogToFile)
+        if (logToFile)
         {
             logFile.open(logFilename, logFile.app);
 
@@ -65,7 +65,7 @@ namespace slou
             logFile.close();
         }
 
-        if (shouldLogToScreen)
+        if (logToScreen && colorTerminalOutput)
         {
             if (level == SUCCESS)
                 std::cout << GREEN    << Format(_format) << RESET << std::endl;
@@ -77,9 +77,10 @@ namespace slou
                 std::cout << L_RED    << Format(_format) << RESET << std::endl;
             else if (level == CRITICAL)
                 std::cout << RED      << Format(_format) << RESET << std::endl;
-        }
+        } else if (logToScreen && !colorTerminalOutput)
+            std::cout << Format(_format) << std::endl;
 
-        if (!shouldLogToScreen && !shouldLogToFile)
+        if (!logToScreen && !logToFile)
             throw std::runtime_error("At least one of the variables (shouldLogToScreen or shouldLogToFile) must be true!");
     }
 
