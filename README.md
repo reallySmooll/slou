@@ -4,7 +4,7 @@
         <img src="https://img.shields.io/static/v1?label=License&message=MIT&color=informational">
     </a>
     <a href="https://www.github.com/reallySmooll/slou/blob/master/CHANGELOG.md" alt="Version">
-        <img src="https://img.shields.io/static/v1?label=Version&message=v1.1.0&color=informational">
+        <img src="https://img.shields.io/static/v1?label=Version&message=v1.1.1&color=informational">
     </a>
     <a href="https://www.codacy.com/gh/reallySmooll/slou/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=reallySmooll/slou&amp;utm_campaign=Badge_Grade" alt="Codacy Badge">
         <img src="https://app.codacy.com/project/badge/Grade/30c92ecea05f43a98c67c947f61bbcd3">
