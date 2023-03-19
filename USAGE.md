@@ -120,11 +120,11 @@ In this example `%X` has been changed to `%x`, which instead of the current time
 
 Time format set to `%X`:
 
-<p align="center"><img src="assets/images/Time_format_%X.png" alt="Time formatting using the %X conversion specifier"></p>
+<p align="center"><img src="assets/images/Time_format_time.png" alt="Time formatting using the %X conversion specifier"></p>
 
 Time format set to `%x`:
 
-<p align="center"><img src="assets/images/Time_format_%x.png" alt="Time formatting using the %x conversion specifier"></p>
+<p align="center"><img src="assets/images/Time_format_date.png" alt="Time formatting using the %x conversion specifier"></p>
 
 If you'd like to see more ways of formatting your date and/or time, visit https://en.cppreference.com/w/cpp/io/manip/put_time.
 
