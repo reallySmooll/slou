@@ -31,13 +31,13 @@ int main()
 
 The output:
 
-```bash
+```
 slou - [INFO] (22:56:40): Hello, world!
 ```
 
 You can obviously change the formatting to exclude some info from the log like for example the time, which would output:
 
-```bash
+```
 slou - [INFO]: Hello, world!
 ```
 
