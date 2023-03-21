@@ -1,6 +1,8 @@
 # Usage and configuration
 This file explains ways of configuration for slou or new features that have been added in the latest release.
 
+**NOTE: This documentation uses version >=1.2.0.**
+
 ## Custom formatting
 As of version `1.1.0`, slou supports custom formatting similar in use to the Python `logging` library.
 
@@ -10,6 +12,7 @@ There are four variables you can use to customize your log format:
 - `{level}` - Severity level
 - `{time}` - Date and/or time
 - `{message}` - Your log message
+- `{moduleName}` - Your module name (e.g. class name). New as of `v1.2.0`
 
 To customize your format, you need to add it as a constructor argument:
 
@@ -18,10 +21,12 @@ To customize your format, you need to add it as a constructor argument:
 
 int main()
 {
-    // You can create a new variable with your custom format, or pass it directly to the constructor.
+    // You can create a new variable with your custom format, or pass it directly to the format() function.
     std::string format = "{projectName} - [{level}] ({time}): {message}";
 
-    slou::Logger logger("slou", "%X", true, false, "slou.log", format);
+    slou::Logger logger("slou");
+
+    logger.format(format); // This function is new as of v1.2.0
 
     logger.Log(logger.INFO, "Hello, world!");
 
@@ -57,7 +62,9 @@ As of version `v1.1.1`, you can decide whether you want to color terminal output
 
 int main()
 {
-    slou::Logger logger("slou", "%X", true, true);
+    slou::Logger logger("slou");
+
+    logger.logToScreen(true); // This function is new as of v1.2.0
 
     // By default colorTerminalOutput is set to true.
     logger.colorTerminalOutput = true;
@@ -108,7 +115,9 @@ If you'd like to change the default formatting, you need to change the second co
 
 int main()
 {
-    slou::Logger logger("slou", "%x");
+    slou::Logger logger("slou");
+
+    logger.timeFormat("%x"); // This function is new as of v1.2.0
 
     logger.Log(logger.INFO, "Hello, world!");
 
@@ -129,7 +138,7 @@ Time format set to `%x`:
 If you'd like to see more ways of formatting your date and/or time, visit https://en.cppreference.com/w/cpp/io/manip/put_time.
 
 ## Changing constructor arguments on the fly
-The Logger's constructor does two jobs, checking if the log file exists and if it does, removing it so a new one can be created, and initializing the constructor arguments to variables you can change on the fly.
+The Logger's constructor does two jobs, checking if the log file exists and if it does, removing it so a new one can be created, and initializing the constructor argument (and default values) to variables you can change on the fly.
 
 Like for example the `logToFile` variable:
 
@@ -138,11 +147,14 @@ Like for example the `logToFile` variable:
 
 int main()
 {
-    slou::Logger logger("slou", "%x", true, true);
+    slou::Logger logger("slou");
+
+    logger.logToScreen(true); // This function is new as of v1.2.0
 
     logger.Log(logger.INFO, "This is being logged into the file!");
 
-    logger.logToFile = false;
+    logger.logToFile(false); // This function is new as of v1.2.0
+    logger.timeFormat("%x"); // This function is new as of v1.2.0
 
     logger.Log(logger.INFO, "This isn't being logged into the file!");
 }
@@ -159,11 +171,13 @@ Another example is the `logToScreen` variable:
 
 int main()
 {
-    slou::Logger logger("slou", "%x", true, true);
+    slou::Logger logger("slou");
+
+    logger.logToScreen(true); // This function is new as of v1.2.0
 
     logger.Log(logger.INFO, "This is being logged onto the screen!");
 
-    logger.logToScreen = false;
+    logger.logToScreen(false); // This function is new as of v1.2.0
 
     logger.Log(logger.INFO, "This isn't being logged onto the screen!");
 }
@@ -172,7 +186,3 @@ int main()
 The above code, after execution, will result in the following output:
 
 <p align="center"><img src="assets/images/logToScreen_false.png" alt="logToScreen set to false"></p>
-
-You can change every single one of the constructor arguments whenever you want.
-
-**NOTE: Format is one exception, if you'd like to change the log format, you need to change it in the constructor, or change the format variable if you have one before you initialize The Logger. Check out the [Custom formatting](#custom-formatting) section above.**
