@@ -28,8 +28,15 @@ namespace slou
     class SLOU_PUBLIC Logger
     {
         public:
-            explicit Logger(const std::string& projectName="slou", const char* timeFormat="%X", bool logToFile=true, bool logToScreen=false, const std::string& logFilename="slou.log", const std::string& format="{projectName} - [{level}] ({time}): {message}");
+            explicit Logger(const std::string& projectName="slou");
             ~Logger();
+
+            Logger& moduleName(const std::string& moduleName);
+            Logger& timeFormat(const char* timeFormat);
+            Logger& logToFile(bool logToFile);
+            Logger& logToScreen(bool logToScreen);
+            Logger& logFilename(const std::string& logFilename);
+            Logger& format(const std::string& format);
 
             void Log(const std::string& level, const std::string& message);
 
@@ -39,16 +46,7 @@ namespace slou
             const std::string ERROR    = "ERROR";    ///< Error level indicates that there's something wrong with the program requires attention.
             const std::string CRITICAL = "CRITICAL"; ///< Critical level indicates that there's something wrong with the program and requires immediate attention.
 
-            std::string projectName;                 ///< Name of your project. (defaults to "slou")
-
-            const char* timeFormat;                  ///< Date and/or time format. (defaults to "%X", which means the current hour, minute and second)
-
-            bool logToFile;                          ///< Should the logger put logs to a file. (defaults to "true")
-            bool logToScreen;                        ///< Should the logger display logs to a screen. (defaults to "false")
-
-            std::string logFilename;                 ///< Path and name of the log file. (defaults to "slou.log")
-
-            bool colorTerminalOutput = true;         ///< Should logs in the terminal be colored. (defaults to "true")
+            bool colorTerminalOutput = true;         ///< Should logs in the terminal be colored.
         private:
             std::string CurrentDateAndTime(const char* timeFormat);
             std::string Format(std::string format);
@@ -62,8 +60,17 @@ namespace slou
 
             std::fstream logFile;                    ///< The file used for logging.
 
-            std::string _format;                     ///< Custom log format
-            std::string _level;                      ///< Log level
-            std::string _message;                    ///< Log message
+            std::string _projectName;                ///< Name of your project.
+
+            const char* _timeFormat;                 ///< Date and/or time format.
+
+            bool _logToFile;                         ///< Should the logger put logs to a file.
+            bool _logToScreen;                       ///< Should the logger display logs to a screen.
+
+            std::string _logFilename;                ///< Path and name of the log file.
+            std::string _moduleName;                 ///< Name of your module. (in other words, your class or something else, e.g. "CORE", "UTILS", "RENDERER". Can also be lowercase)
+            std::string _format;                     ///< Custom log format.
+            std::string _level;                      ///< Log level.
+            std::string _message;                    ///< Log message.
     };
 }
