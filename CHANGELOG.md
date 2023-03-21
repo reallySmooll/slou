@@ -1,6 +1,13 @@
 # Release Notes
 These are the relase notes for `slou`.
 
+## v1.2.0 | 21, mar. 2023
+**Added**
+- Named Parameter Idioms instead of positional arguments in the constructor (`projectName` is an exception)
+- New log format variable, `moduleName` which is the module name (e.g. class name)
+**Changed**
+- Changeable variables initialized in the constructor are now private immutable variables only used for initialization. To change those variables, you'll have to use the NPIs
+
 ## v1.1.1 | 19, mar. 2023
 **Changed**
 - Changed variables `shouldLogToFile` and `shouldLogToScreen` to `logToFile` and `logToScreen`
