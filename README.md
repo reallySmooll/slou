@@ -4,7 +4,7 @@
         <img src="https://img.shields.io/static/v1?label=License&message=MIT&color=informational">
     </a>
     <a href="https://www.github.com/reallySmooll/slou/blob/master/CHANGELOG.md" alt="Version">
-        <img src="https://img.shields.io/static/v1?label=Version&message=v1.1.1&color=informational">
+        <img src="https://img.shields.io/static/v1?label=Version&message=v1.2.0&color=informational">
     </a>
     <a href="https://www.codacy.com/gh/reallySmooll/slou/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=reallySmooll/slou&amp;utm_campaign=Badge_Grade" alt="Codacy Badge">
         <img src="https://app.codacy.com/project/badge/Grade/30c92ecea05f43a98c67c947f61bbcd3">
@@ -30,7 +30,7 @@ Windows users can now also download a binary of the library on the [Releases](ht
 Building slou is as easy as 1-2-3. The following commands are directed at Linux users but it should work for any operating system as Meson will generate the necessary files for building the project.
 
 ```bash
-$ git clone https://github.com/reallySmooll/slou.git
+$ git clone --recursive https://github.com/reallySmooll/slou.git
 $ cd slou/
 $ meson setup build/
 $ meson compile -C build/
@@ -61,7 +61,9 @@ int main()
 
 That is the default setup for slou. The logs will be saved to a file called (by default) `slou.log` but the logs will not be displayed on the screen.
 
-You can obviously change this and customize it to your liking. If you'd like to see more, you can check out the documentation [here](https://reallysmooll.github.io/slou-docs) or [USAGE.md](https://www.github.com/reallySmooll/slou/blob/master/USAGE.md)
+You can obviously change this and customize it to your liking. If you'd like to see more, you can check out the documentation [here](https://reallysmooll.github.io/slou-docs) or [USAGE.md](https://www.github.com/reallySmooll/slou/blob/master/USAGE.md).
+
+**NOTE: There are problems with images on the `Usage and configuration` section on the documentation page for slou, we are fixing them but until this note disappears, please use the [USAGE.md](https://www.github.com/reallySmooll/slou/blob/master/USAGE.md) if you want to see proof that the configuration works. Sorry for the inconvenience. :)**
 
 ## Contributing
 If you'd like to contribute, please refer to the [contributing guide](https://www.github.com/reallySmooll/slou/blob/master/CONTRIBUTING.md).
