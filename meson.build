@@ -1,6 +1,6 @@
 project('slou', 'cpp',
-  version : '1.1.1',
-  default_options : ['warning_level=3', 'cpp_std=c++20'])
+  version : '1.2.0',
+  default_options : ['warning_level=3', 'cpp_std=c++17'])
 
 # These arguments are only used to build the shared library
 # not the executables that use the library.
