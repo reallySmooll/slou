@@ -13,7 +13,7 @@
 
 "Smooll" LOgging Utility (pronounced `slew`).
 
-`slou` is a simple logging library made in C++ that's easy to use and fast. It has moderate configuration and can be used in both small and big projects.
+`slou` is a simple logging library made in C++ that's easy to use and can be used in both small and big projects.
 
 ## Installation
 slou uses the Meson build system which means that you can install your project on all platforms that are supported by Meson.
